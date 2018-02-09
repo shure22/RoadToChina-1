@@ -7,8 +7,8 @@ using UnityEngine.UI;
 public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHandler
 {
 	public bool dragOnSurfaces = true;
-	
-	private Dictionary<int,GameObject> m_DraggingIcons = new Dictionary<int, GameObject>();
+    public string typeOfItem = "Boil";
+    private Dictionary<int,GameObject> m_DraggingIcons = new Dictionary<int, GameObject>();
 	private Dictionary<int, RectTransform> m_DraggingPlanes = new Dictionary<int, RectTransform>();
 
 	public void OnBeginDrag(PointerEventData eventData)
@@ -23,11 +23,14 @@ public class DragMe : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDragHa
 
 		m_DraggingIcons[eventData.pointerId].transform.SetParent (canvas.transform, false);
 		m_DraggingIcons[eventData.pointerId].transform.SetAsLastSibling();
-		
-		var image = m_DraggingIcons[eventData.pointerId].AddComponent<Image>();
-		// The icon will be under the cursor.
-		// We want it to be ignored by the event system.
-		var group = m_DraggingIcons[eventData.pointerId].AddComponent<CanvasGroup>();
+
+
+        var image = m_DraggingIcons[eventData.pointerId].AddComponent<Image>();
+        var t=m_DraggingIcons[eventData.pointerId].AddComponent<SlotTypes>();
+        t.typeOfItem = typeOfItem;
+        // The icon will be under the cursor.
+        // We want it to be ignored by the event system.
+        var group = m_DraggingIcons[eventData.pointerId].AddComponent<CanvasGroup>();
 		group.blocksRaycasts = false;
 
 		image.sprite = GetComponent<Image>().sprite;

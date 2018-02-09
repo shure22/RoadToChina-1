@@ -8,24 +8,25 @@ public class DropMe : MonoBehaviour, IDropHandler, IPointerEnterHandler, IPointe
 	public Image containerImage;
 	public Image receivingImage;
 	private Color normalColor;
-	//public Color highlightColor = Color.yellow;
-	
-	public void OnEnable ()
+    public string typeOfItem = "Boil";
+  //public Color highlightColor = Color.yellow;
+
+  public void OnEnable ()
 	{
-		if (containerImage != null)
-			normalColor = containerImage.color;
+		//if (containerImage != null)
+			//normalColor = containerImage.color;
 	}
 	
 	public void OnDrop(PointerEventData data)
 	{
-		containerImage.color = normalColor;
+		//containerImage.color = normalColor;
 		
 		if (receivingImage == null)
 			return;
-		
-		Sprite dropSprite = GetDropSprite (data);
+
+        Sprite dropSprite = GetDropSprite (data);
 		if (dropSprite != null)
-			receivingImage.overrideSprite = dropSprite;
+			receivingImage.sprite = dropSprite;
 	}
 
 	public void OnPointerEnter(PointerEventData data)
