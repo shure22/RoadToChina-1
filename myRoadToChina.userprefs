@@ -1,0 +1,15 @@
+﻿<Properties StartupConfiguration="{299F12D8-8DED-B91B-1DFD-08B42BE3D134}|">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/GameScreen.cs">
+    <Files>
+      <File FileName="Assets/Scripts/StartScreen.cs" Line="15" Column="3" />
+      <File FileName="Assets/Scripts/GameScreen.cs" Line="9" Column="3" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.myRoadToChina PreferredExecutionTarget="Unity.Editor" />
+</Properties>
