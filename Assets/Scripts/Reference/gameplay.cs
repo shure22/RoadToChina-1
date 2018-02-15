@@ -8,7 +8,7 @@ public class gameplay : MonoBehaviour {
 	public static string seat1 = "empty";
 	public static string seat2 = "empty";
 	public GameObject[] dishPrefabs;
-    public int y=2;
+    public float y=2;
 
 	public bool seatflag = true;
 

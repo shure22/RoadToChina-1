@@ -19,16 +19,16 @@ public class draggable : MonoBehaviour, IBeginDragHandler, IDragHandler, IEndDra
         var canvas = FindInParents<Canvas>(gameObject);
         if (canvas == null)
           return;
-        newObj = new GameObject("dish");
+        newObj = gameObject;
         newObj.transform.SetParent(canvas.transform, false);
         newObj.transform.SetAsLastSibling();
-        var image = newObj.AddComponent<Image>();
+        //var image = newObj.AddComponent<Image>();
         // The icon will be under the cursor.
         // We want it to be ignored by the event system.
         var group = newObj.AddComponent<CanvasGroup>();
         group.blocksRaycasts = false;
-        image.sprite = GetComponent<Image>().sprite;
-        image.SetNativeSize();
+        //image.sprite = GetComponent<Image>().sprite;
+        //image.SetNativeSize();
 
         plane = transform as RectTransform;
 
